@@ -1,11 +1,13 @@
 import express from "express"
 import { ConnectDB } from "./src/config/DBConfig.js"
 import router from "./src/routes/UserRoutes.js"
-
+import bodyParser from "body-parser"
 
 //initialize the server
 //create a server
 const Server = express()
+
+Server.use(bodyParser.json())
 
 ConnectDB()
 
